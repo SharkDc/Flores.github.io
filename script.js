@@ -13,7 +13,7 @@ onload = () => {
         // Crea un enlace temporal
         const a = document.createElement('a');
         a.href = fileUrl;
-        a.download = 'archivo.txt'; // Nombre del archivo que se descargará
+        a.download = '¡Feliz Dia!.txt'; // Nombre del archivo que se descargará
         document.body.appendChild(a);
         a.click();
 
