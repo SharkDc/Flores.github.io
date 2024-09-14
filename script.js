@@ -10,9 +10,21 @@ onload = () => {
     confirmButtonText: 'Sí, bórralo'
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire('Borrado!', 'Tu archivo ha sido borrado.', 'success')
-    }
+      const fileUrl = 'tu-carta.txt';
+
+      // Ejemplo básico
+      Swal.fire('Hola', 'Este es un mensaje de ejemplo', 'info');
+      // Crea un enlace temporal
+      const a = document.createElement('a');
+      a.href = fileUrl;
+      a.download = '¡Feliz Dia!.txt'; // Nombre del archivo que se descargará
+      document.body.appendChild(a);
+      a.click();
+
+      // Limpia el enlace temporal
+      document.body.removeChild(a);    }
   })
+
     const c = setTimeout(() => {
       document.body.classList.remove("not-loaded");
       clearTimeout(c);
@@ -22,19 +34,7 @@ onload = () => {
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('downloadBtn').addEventListener('click', () => {
         // URL del archivo ya creado en el servidor
-        const fileUrl = 'tu-carta.txt';
-
-        // Ejemplo básico
-        Swal.fire('Hola', 'Este es un mensaje de ejemplo', 'info');
-        // Crea un enlace temporal
-        const a = document.createElement('a');
-        a.href = fileUrl;
-        a.download = '¡Feliz Dia!.txt'; // Nombre del archivo que se descargará
-        document.body.appendChild(a);
-        a.click();
-
-        // Limpia el enlace temporal
-        document.body.removeChild(a);
+        
     });
 });
 
