@@ -1,40 +1,38 @@
 onload = () => {
 
   Swal.fire({
-    title: '¿Estás seguro?',
-    text: "Esta acción no se puede deshacer",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Sí, bórralo'
+    title: "¿Te gustaria leer una pequeña carta?",
+    showDenyButton: true,
+    confirmButtonText: "Si",
+    denyButtonText: "No"
   }).then((result) => {
-    if (result.isConfirmed) {
-      const fileUrl = 'tu-carta.txt';
 
-      // Ejemplo básico
-      Swal.fire('Hola', 'Este es un mensaje de ejemplo', 'info');
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+
+      const fileUrl = 'carta.pdf';
+
       // Crea un enlace temporal
       const a = document.createElement('a');
       a.href = fileUrl;
-      a.download = '¡Feliz Dia!.txt'; // Nombre del archivo que se descargará
+      a.download = '¡Feliz Dia!.pdf'; // Nombre del archivo que se descargará
       document.body.appendChild(a);
       a.click();
 
       // Limpia el enlace temporal
-      document.body.removeChild(a);    }
-  })
+      document.body.removeChild(a);
 
-    const c = setTimeout(() => {
-      document.body.classList.remove("not-loaded");
-      clearTimeout(c);
-    }, 1000);
-  };
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('downloadBtn').addEventListener('click', () => {
-        // URL del archivo ya creado en el servidor
-        
-    });
-});
+      const c = setTimeout(() => {
+        document.body.classList.remove("not-loaded");
+        clearTimeout(c);
+      }, 1000);
+
+      Swal.fire("I LOVE U!", "", "success");
+    } else if (result.isDenied) {
+      Swal.fire("¡Terminamos!", "", "error");
+    }
+  });
+
+
+};
 
