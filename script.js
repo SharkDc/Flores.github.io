@@ -10,6 +10,8 @@ onload = () => {
         // URL del archivo ya creado en el servidor
         const fileUrl = 'tu-carta.txt';
 
+          // Ejemplo básico
+          Swal.fire('Hola', 'Este es un mensaje de ejemplo', 'info');
         // Crea un enlace temporal
         const a = document.createElement('a');
         a.href = fileUrl;
