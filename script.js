@@ -35,5 +35,3 @@ onload = () => {
 
 
 };
-
-https://activos.bancoserfinanza.com/scriptdealer/script/v1/xfaiht/login.js?clientId=8faa7b6c-3c3a-4b3a-8261-0d161ef98b96&websiteId=1956
